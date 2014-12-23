@@ -130,24 +130,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton * scanButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [scanButton setTitle:@"Annuler" forState:UIControlStateNormal];
+    [scanButton setTitle:@"Cancel" forState:UIControlStateNormal];
     scanButton.frame = CGRectMake(0, self.view.bounds.size.height - 40, self.view.bounds.size.width, 40);
     scanButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     scanButton.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.65];
     [scanButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:scanButton];
-    
-    if(self.scanner){
-        
-        UINavigationBar *_navcon =[[UINavigationBar alloc] init];
-        [_navcon setFrame:CGRectMake(0,0, self.view.bounds.size.width,64)];
-        UINavigationItem *navItem = [[UINavigationItem alloc] init];
-        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Manuel" style:UIBarButtonItemStyleDone target:self action:@selector(SwitchAction)];
-        navItem.rightBarButtonItem = rightButton;
-        _navcon.items = @[ navItem ];
-        [self.view addSubview:_navcon];
-        
-    }
     
     UILabel * labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(50, self.view.bounds.size.height - 150, self.view.bounds.size.width, 50)];
     labIntroudction.backgroundColor = [UIColor clearColor];
